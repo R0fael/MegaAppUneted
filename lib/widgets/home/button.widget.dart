@@ -16,7 +16,7 @@ class Button extends StatelessWidget {
       builder: (controller) {
         return InkWell(
             onTap: () {
-              operation;
+              operation();
             },
             child: Row(children: [
               Container(

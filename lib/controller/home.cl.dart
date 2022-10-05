@@ -23,4 +23,46 @@ class HomeCl extends GetxController {
       update();
     });
   }
+
+  showTimer() {
+    return (() {
+      page = 'Timer';
+      update();
+    });
+  }
+
+  showShop() {
+    return (() {
+      page = 'Shop';
+      update();
+    });
+  }
+
+  showSerch() {
+    return (() {
+      page = 'Serch';
+      update();
+    });
+  }
+
+  showCloud() {
+    return (() {
+      page = 'Cloud';
+      update();
+    });
+  }
+
+  showSettings() {
+    return (() {
+      page = 'Settings';
+      update();
+    });
+  }
+
+  showSetuper() {
+    return (() {
+      page = 'SetUper';
+      update();
+    });
+  }
 }

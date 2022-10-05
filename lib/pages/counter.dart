@@ -16,8 +16,8 @@ class Counter extends StatelessWidget {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Counter',
+              Text(
+                '$counter',
                 style: TextStyle(fontSize: 50.00, backgroundColor: Colors.blue),
               ),
               const SizedBox(height: 200.00),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:megaapp/controller/home.cl.dart';
+import 'package:megaapp/pages/timer.dart';
 import 'package:megaapp/pages/todo.dart';
 import 'package:megaapp/pages/calculator.dart';
 import 'package:megaapp/pages/counter.dart';
@@ -39,8 +40,17 @@ class Home extends StatelessWidget {
                     Button(
                         nameButton: "Todo", operation: controller.showTodo()),
                     Button(
-                        nameButton: "Timer",
-                        operation: controller.showCalculator()),
+                        nameButton: "Timer", operation: controller.showTimer()),
+                    Button(
+                        nameButton: "Serch", operation: controller.showTimer()),
+                    Button(
+                        nameButton: "Shop", operation: controller.showShop()),
+                    Button(
+                        nameButton: "Setuper",
+                        operation: controller.showSetuper()),
+                    Button(
+                        nameButton: "Settings",
+                        operation: controller.showSettings()),
                   ],
                 ),
               ),
@@ -61,6 +71,9 @@ class Home extends StatelessWidget {
     }
     if (page == "Todo") {
       return Todo();
+    }
+    if (page == "Timer") {
+      return TimerP();
     }
     return SizedBox();
   }

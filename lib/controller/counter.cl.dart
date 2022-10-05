@@ -4,17 +4,23 @@ class CounterCl extends GetxController {
   int counter = 0;
 
   plus() {
-    counter++;
-    update();
+    return () {
+      counter++;
+      update();
+    };
   }
 
   reset() {
-    counter = 0;
-    update();
+    return () {
+      counter = 0;
+      update();
+    };
   }
 
   minus() {
-    counter--;
-    update();
+    return () {
+      counter--;
+      update();
+    };
   }
 }
