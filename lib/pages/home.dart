@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:megaapp/controller/home.cl.dart';
+import 'package:megaapp/pages/test.dart';
 import 'package:megaapp/pages/timer.dart';
 import 'package:megaapp/pages/todo.dart';
 import 'package:megaapp/pages/calculator.dart';
@@ -17,43 +18,49 @@ class Home extends StatelessWidget {
       builder: (controller) {
         return Scaffold(
           appBar: AppBar(
+            backgroundColor: Color.fromARGB(223, 98, 210, 255),
             title: const Text(
               "MegaApp",
-              style: TextStyle(fontSize: 50, fontFamily: 'Afont'),
+              style: TextStyle(
+                fontSize: 50,
+              ),
             ),
             centerTitle: true,
           ),
           body: Column(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.1,
-                child: ListView(
-                  padding: const EdgeInsets.all(8),
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Button(
-                        nameButton: "Calculator",
-                        operation: controller.showCalculator()),
-                    Button(
-                        nameButton: "Counter",
-                        operation: controller.showCounter()),
-                    Button(
-                        nameButton: "Todo", operation: controller.showTodo()),
-                    Button(
-                        nameButton: "Timer", operation: controller.showTimer()),
-                    Button(
-                        nameButton: "Serch", operation: controller.showTimer()),
-                    Button(
-                        nameButton: "Shop", operation: controller.showShop()),
-                    Button(
-                        nameButton: "Setuper",
-                        operation: controller.showSetuper()),
-                    Button(
-                        nameButton: "Settings",
-                        operation: controller.showSettings()),
-                  ],
-                ),
-              ),
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  decoration: const BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(112, 209, 209, 209),
+                        offset: Offset(0.0, -4.0),
+                        blurRadius: 8.00),
+                  ], color: Color.fromARGB(223, 98, 210, 255)),
+                  child: ListView(
+                    padding: const EdgeInsets.all(8),
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Button(
+                          nameButton: "Calculator",
+                          operation: controller.show("Calculator")),
+                      Button(
+                          nameButton: "Counter",
+                          operation: controller.show("Counter")),
+                      Button(
+                          nameButton: "Todo",
+                          operation: controller.show("Todo")),
+                      Button(
+                          nameButton: "Timer",
+                          operation: controller.show("Timer")),
+                      Button(
+                          nameButton: "Settings",
+                          operation: controller.show("Settings")),
+                      Button(
+                          nameButton: "Test",
+                          operation: controller.show("Test")),
+                    ],
+                  )),
               Expanded(child: getCurrentWidget(controller.page))
             ],
           ),
@@ -74,6 +81,9 @@ class Home extends StatelessWidget {
     }
     if (page == "Timer") {
       return TimerP();
+    }
+    if (page == "Test") {
+      return Test();
     }
     return SizedBox();
   }

@@ -29,11 +29,13 @@ environment:
 dependencies:
   get: ^4.6.5
   flutter:
+    
     sdk: flutter
 
 flutter:
+  uses-material-design: true
   fonts:
-   - family: Schyler
+   - family: Afont
      fonts:
        - asset: fonts/afont.ttf
 
@@ -56,7 +58,7 @@ dev_dependencies:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-uses-material-design: true
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

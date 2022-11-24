@@ -13,13 +13,13 @@ class Todo extends StatelessWidget {
         init: TodoCl(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: Colors.grey[980],
+            backgroundColor: Color.fromARGB(223, 174, 232, 255),
             appBar: AppBar(
               title: const Text("Список Дел"),
               centerTitle: true,
             ),
             floatingActionButton: FloatingActionButton(
-              backgroundColor: Colors.greenAccent,
+              backgroundColor: Color.fromARGB(225, 26, 164, 241),
               child: const Icon(Icons.add_box),
               onPressed: () {
                 showDialog(
@@ -59,45 +59,48 @@ class Todo extends StatelessWidget {
                       title: Text(controller.todoList[index]),
                       trailing: SizedBox(
                         width: 100,
-                        child: Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(
-                                Icons.mode_edit,
-                                color: Colors.green,
-                              ),
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      title: const Text("Изменить заметку"),
-                                      content: TextField(
-                                        onChanged: (String text) {
-                                          controller.editTodo(text);
-                                        },
-                                      ),
-                                      actions: [
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            controller.saveEditTodo(index);
-                                            Navigator.pop(context);
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * 0.5,
+                          child: Row(
+                            children: [
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.mode_edit,
+                                  color: Color.fromARGB(225, 26, 164, 241),
+                                ),
+                                onPressed: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        title: const Text("Изменить заметку"),
+                                        content: TextField(
+                                          onChanged: (String text) {
+                                            controller.editTodo(text);
                                           },
-                                          child: const Text("Изменить"),
                                         ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.delete_sweep,
-                                  color: Colors.green),
-                              onPressed: () =>
-                                  controller.removeToDoByIndex(index),
-                            ),
-                          ],
+                                        actions: [
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              controller.saveEditTodo(index);
+                                              Navigator.pop(context);
+                                            },
+                                            child: const Text("Изменить"),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.delete_sweep,
+                                    color: Color.fromARGB(225, 26, 164, 241)),
+                                onPressed: () =>
+                                    controller.removeToDoByIndex(index),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

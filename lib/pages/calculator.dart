@@ -14,13 +14,13 @@ class Calculator extends StatelessWidget {
           button(String nameButton) {
             return Container(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Color.fromARGB(223, 11, 93, 126),
                   borderRadius: BorderRadius.circular(10.00),
                   boxShadow: const [
                     BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(-1.0, -1.0),
-                        blurRadius: 4.00),
+                        color: Color.fromARGB(223, 11, 93, 126),
+                        offset: Offset(0, 0),
+                        blurRadius: 2.00),
                   ],
                 ),
                 width: MediaQuery.of(context).size.width * 0.2,
@@ -31,19 +31,22 @@ class Calculator extends StatelessWidget {
                   },
                   child:
                       Text(nameButton, style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(223, 11, 93, 126),
+                  ),
                 ));
           }
 
           bigButton(String nameButton) {
             return Container(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Color.fromARGB(223, 11, 93, 126),
                   borderRadius: BorderRadius.circular(10.00),
                   boxShadow: const [
                     BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(-1.0, -1.0),
-                        blurRadius: 4.00),
+                        color: Color.fromARGB(223, 11, 93, 126),
+                        offset: Offset(0, 0),
+                        blurRadius: 2.00),
                   ],
                 ),
                 width: MediaQuery.of(context).size.width * 0.2,
@@ -54,6 +57,9 @@ class Calculator extends StatelessWidget {
                   },
                   child:
                       Text(nameButton, style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(223, 11, 93, 126),
+                  ),
                 ));
           }
 
@@ -65,7 +71,7 @@ class Calculator extends StatelessWidget {
 
           String counter = controller.counter;
           return (Scaffold(
-            backgroundColor: Color.fromARGB(255, 229, 229, 229),
+            backgroundColor: Color.fromARGB(223, 174, 232, 255),
             body: Column(
               children: [
                 Container(
